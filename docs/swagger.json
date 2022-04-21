@@ -1,0 +1,79 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Documentação da API de alunos.",
+        "title": "Swagger API-Students",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API-Students Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "https://localhost:8080/students",
+    "paths": {
+        "/student": {
+            "post": {
+                "description": "Creater new student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "student"
+                ],
+                "summary": "New student",
+                "responses": {}
+            }
+        },
+        "/students": {
+            "get": {
+                "description": "List all students",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "students"
+                ],
+                "summary": "Show all students",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.Student"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.Student": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "noteA": {
+                    "type": "integer"
+                },
+                "noteB": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

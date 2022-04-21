@@ -1,0 +1,53 @@
+definitions:
+  main.Student:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      noteA:
+        type: integer
+      noteB:
+        type: integer
+    type: object
+host: https://localhost:8080/students
+info:
+  contact:
+    email: support@swagger.io
+    name: API-Students Support
+    url: http://www.swagger.io/support
+  description: Documentação da API de alunos.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger API-Students
+  version: "1.0"
+paths:
+  /student:
+    post:
+      consumes:
+      - application/json
+      description: Creater new student
+      produces:
+      - application/json
+      responses: {}
+      summary: New student
+      tags:
+      - student
+  /students:
+    get:
+      consumes:
+      - application/json
+      description: List all students
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Student'
+      summary: Show all students
+      tags:
+      - students
+swagger: "2.0"
